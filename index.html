@@ -1,365 +1,822 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="light" lang="ru"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Verdant Shells | Экологичные садовые дома</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Домики</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "on-tertiary-fixed-variant": "#354e1f",
-                    "on-tertiary-container": "#defebe",
-                    "on-primary-fixed": "#092100",
-                    "surface-variant": "#e2e3df",
-                    "outline-variant": "#c2c9b8",
-                    "inverse-surface": "#2e312f",
-                    "primary-fixed-dim": "#a0d57f",
-                    "surface-container-highest": "#e2e3df",
-                    "surface-dim": "#d9dad7",
-                    "on-tertiary-fixed": "#0d2000",
-                    "tertiary": "#445e2e",
-                    "error-container": "#ffdad6",
-                    "surface-bright": "#f9faf6",
-                    "outline": "#73796b",
-                    "primary": "#346219",
-                    "surface-container-low": "#f3f4f0",
-                    "on-background": "#1a1c1a",
-                    "tertiary-container": "#5c7744",
-                    "on-error": "#ffffff",
-                    "secondary-container": "#ff6f36",
-                    "on-secondary-container": "#601c00",
-                    "on-primary-fixed-variant": "#245108",
-                    "surface-container": "#edeeea",
-                    "on-tertiary": "#ffffff",
-                    "secondary-fixed": "#ffdbcf",
-                    "on-surface-variant": "#42493c",
-                    "tertiary-fixed-dim": "#b2d094",
-                    "on-primary-container": "#daffbe",
-                    "primary-fixed": "#bcf298",
-                    "background": "#f9faf6",
-                    "on-secondary-fixed": "#380d00",
-                    "inverse-primary": "#a0d57f",
-                    "secondary-fixed-dim": "#ffb59b",
-                    "on-secondary-fixed-variant": "#812800",
-                    "surface-tint": "#3c6920",
-                    "surface-container-lowest": "#ffffff",
-                    "surface": "#f9faf6",
-                    "on-surface": "#1a1c1a",
-                    "primary-container": "#4c7b30",
-                    "tertiary-fixed": "#cdecae",
-                    "inverse-on-surface": "#f0f1ed",
-                    "on-primary": "#ffffff",
-                    "error": "#ba1a1a",
-                    "surface-container-high": "#e7e9e5",
-                    "on-secondary": "#ffffff",
-                    "secondary": "#a93700",
-                    "on-error-container": "#93000a"
+            colors: {
+              "on-tertiary-fixed-variant": "#354e1f",
+              "on-tertiary-container": "#defebe",
+              "on-primary-fixed": "#092100",
+              "surface-variant": "#e2e3df",
+              "outline-variant": "#c2c9b8",
+              "inverse-surface": "#2e312f",
+              "primary-fixed-dim": "#a0d57f",
+              "surface-container-highest": "#e2e3df",
+              "surface-dim": "#d9dad7",
+              "on-tertiary-fixed": "#0d2000",
+              tertiary: "#445e2e",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f9faf6",
+              outline: "#73796b",
+              primary: "#346219",
+              "surface-container-low": "#f3f4f0",
+              "on-background": "#1a1c1a",
+              "tertiary-container": "#5c7744",
+              "on-error": "#ffffff",
+              "secondary-container": "#ff6f36",
+              "on-secondary-container": "#601c00",
+              "on-primary-fixed-variant": "#245108",
+              "surface-container": "#edeeea",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#ffdbcf",
+              "on-surface-variant": "#42493c",
+              "tertiary-fixed-dim": "#b2d094",
+              "on-primary-container": "#daffbe",
+              "primary-fixed": "#bcf298",
+              background: "#f9faf6",
+              "on-secondary-fixed": "#380d00",
+              "inverse-primary": "#a0d57f",
+              "secondary-fixed-dim": "#ffb59b",
+              "on-secondary-fixed-variant": "#812800",
+              "surface-tint": "#3c6920",
+              "surface-container-lowest": "#ffffff",
+              surface: "#f9faf6",
+              "on-surface": "#1a1c1a",
+              "primary-container": "#4c7b30",
+              "tertiary-fixed": "#cdecae",
+              "inverse-on-surface": "#f0f1ed",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              "surface-container-high": "#e7e9e5",
+              "on-secondary": "#ffffff",
+              secondary: "#a93700",
+              "on-error-container": "#93000a",
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
             },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Manrope"],
-                    "label": ["Manrope"]
-            }
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
           },
         },
-      }
+      };
     </script>
-<style>
-        body { font-family: 'Manrope', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .hero-gradient {
-            background: linear-gradient(to right, rgba(26, 28, 26, 0.8), rgba(26, 28, 26, 0.2));
-        }
-        .skew-bg {
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-        }
-        .skew-bg-reverse {
-            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
-        }
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          to right,
+          rgba(26, 28, 26, 0.8),
+          rgba(26, 28, 26, 0.2)
+        );
+      }
+      .skew-bg {
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+      }
+      .skew-bg-reverse {
+        clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+      }
     </style>
-</head>
-<body class="bg-surface text-on-background">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-xl shadow-stone-900/5 transition-all duration-300">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
-<div class="text-2xl font-bold tracking-tighter text-green-900 dark:text-stone-100 font-headline" style="">Verdant Shells</div>
-<div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-wide">
-<a class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg" href="#" style="">Каталог</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg" href="#" style="">Эко-технологии</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg" href="#" style="">О нас</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg" href="#" style="">Запрос</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-stone-600 hover:text-green-800" style="">search</button>
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-semibold text-sm scale-95 hover:scale-100 duration-200 shadow-lg shadow-primary/20" style="">Консультация</button>
-</div>
-</div>
-</nav>
-<!-- Hero Section -->
-<section class="relative h-screen flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="Современный садовый дом" class="w-full h-full object-cover" data-alt="a modern minimalist wooden garden house with large glass windows nestled in a lush vibrant deciduous forest during the soft golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBci5tE8sJJGw72Bm-d5YK1EdRGo0ZPHbpnF4JEIjLXFT5r3yEhiylZe7P7W0WiJh7WfamHJKgqiLhruBBUgW9PlJoBLj09FALlDwYGNxmoXHEUqX7q06NOvumKKAkwec91jUQ5RXy4y7WXI6N_RQ1QsG-BO2OfQnEdxJmkVOpZwIRPm7972Uv3ewTK6vQgqXd107gBBKijP7Ae_i4SwQqlu7TDmPuXAIDwsDVGzW8pdIGnutS71tBLXTGhTY8WKtgx5XXYH2BXkrc" style=""/>
-<div class="absolute inset-0 hero-gradient"></div>
-</div>
-<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
-<div class="max-w-2xl">
-<span class="text-secondary font-label uppercase tracking-widest text-xs mb-4 block" style="">Экологичная архитектура</span>
-<h1 class="text-white text-6xl md:text-8xl font-black font-headline tracking-tighter leading-none mb-6" style="">
-                Жизнь в гармонии <br/> с природой
-            </h1>
-<p class="text-stone-200 text-lg md:text-xl font-body leading-relaxed mb-10 max-w-lg" style="">
-                Почувствуйте спокойствие осознанной жизни. Наши углеродно-нейтральные садовые модули привносят современный дизайн в сердце вашего убежища.
-            </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-on-secondary-fixed-variant transition-all shadow-2xl shadow-secondary/40" style="">каталог
-                </button>
-<button class="backdrop-blur-md bg-white/10 text-white border border-white/20 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all" style="">
-                    Contact</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Category Grid Section (Replaces Features and Collection) -->
-<section class="py-24 bg-surface-container-low overflow-hidden">
-<div class="max-w-7xl mx-auto px-8">
-<div class="mb-16 text-center">
-<h2 class="text-green-900 text-4xl md:text-5xl font-black font-headline mb-4" style="">Наши категории</h2>
-<div class="h-1 w-20 bg-primary mx-auto"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- 1-2 комнаты -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute top-0 right-0 -mr-16 -mt-16 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="300" viewbox="0 0 200 200" width="300" xmlns="http://www.w3.org/2000/svg">
-<path d="M44.7,-76.4C58.1,-69.2,69.5,-57.4,77.3,-43.9C85.1,-30.4,89.2,-15.2,88.4,-0.5C87.5,14.3,81.8,28.5,73.6,41.4C65.4,54.3,54.7,65.8,41.7,73.5C28.7,81.2,14.3,85,-0.6,86.1C-15.6,87.1,-31.2,85.4,-45.1,78.5C-59,71.6,-71.2,59.5,-79.1,45.3C-87,31.1,-90.6,15.6,-89.7,0.5C-88.8,-14.5,-83.4,-29,-74.6,-41.7C-65.8,-54.4,-53.6,-65.3,-40.1,-72.5C-26.6,-79.7,-13.3,-83.1,0.7,-84.3C14.7,-85.5,29.4,-84.5,44.7,-76.4Z" fill="#4C7B30" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">1-2 комнаты</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Идеальное решение для компактного проживания или гостевого домика. Максимальный уют на минимальной площади.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- 3-4 комнаты -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute bottom-0 left-0 -ml-20 -mb-20 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="350" viewbox="0 0 200 200" width="350" xmlns="http://www.w3.org/2000/svg">
-<path d="M39.9,-68.2C51.1,-60.7,59.2,-48.5,65.8,-35.6C72.4,-22.7,77.5,-9.1,77.2,4.5C76.9,18.1,71.2,31.7,62.8,43.4C54.4,55.1,43.3,64.9,30.5,70.8C17.7,76.7,3.1,78.8,-11.5,77.1C-26,75.4,-40.5,69.9,-52.3,60.6C-64.1,51.3,-73.2,38.2,-77.7,23.8C-82.2,9.3,-82.1,-6.6,-77.4,-21.2C-72.7,-35.8,-63.4,-49,-51.2,-56.3C-39,-63.6,-23.9,-65,-9.4,-67.6C5.1,-70.2,19.6,-74.1,39.9,-68.2Z" fill="#a93700" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">3-4 комнаты</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Просторные модули для всей семьи. Современная планировка и энергоэффективные технологии.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- Для утепления -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="280" viewbox="0 0 200 200" width="280" xmlns="http://www.w3.org/2000/svg">
-<path d="M47.5,-78.2C59.9,-71.4,67.1,-55,73.5,-39.7C79.8,-24.4,85.3,-10.2,84.9,3.9C84.4,17.9,78,31.9,69.1,44.1C60.2,56.3,48.8,66.7,35.5,73.1C22.2,79.5,7.1,81.9,-7.7,80.5C-22.5,79.1,-37,73.9,-49.6,65.6C-62.2,57.3,-72.9,45.8,-79,32.3C-85.1,18.8,-86.6,3.3,-84.3,-11.5C-82,-26.3,-75.9,-40.4,-65.8,-51.1C-55.7,-61.8,-41.6,-69.1,-27.9,-75C-14.2,-80.9,0.8,-85.4,16.5,-84C32.2,-82.6,47.5,-78.2,47.5,-78.2Z" fill="#346219" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">Для утепления</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Специальные решения для круглогодичного проживания даже в самых суровых климатических условиях.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- Бани -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute top-0 left-0 -ml-12 -mt-12 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="320" viewbox="0 0 200 200" width="320" xmlns="http://www.w3.org/2000/svg">
-<path d="M51.3,-84C64.9,-78.6,73.3,-62.4,79.4,-46.1C85.5,-29.8,89.3,-13.4,88.7,2.8C88.1,19,83,35.1,74.5,49.1C66,63.1,54.1,75,40.1,82.4C26.1,89.8,12,92.7,-2.8,97.5C-17.6,102.3,-33.1,109.1,-46.9,104.2C-60.7,99.3,-72.8,82.7,-81,66.1C-89.2,49.5,-93.5,32.9,-94.1,16.3C-94.7,-0.3,-91.6,-16.9,-84.9,-31.8C-78.2,-46.7,-67.9,-59.9,-55.1,-65.9C-42.3,-71.9,-27,-70.7,-12.3,-72.8C2.4,-74.9,17.1,-80.3,31.7,-83C46.3,-85.7,60.8,-85.7,51.3,-84Z" fill="#445e2e" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">Бани</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Традиционный отдых в современном исполнении. Высококачественная древесина и инновационная изоляция.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- Гаражи -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute bottom-1/4 right-0 translate-x-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="260" viewbox="0 0 200 200" width="260" xmlns="http://www.w3.org/2000/svg">
-<path d="M42.2,-71.4C55.7,-64.8,68.4,-56.1,75.8,-43.9C83.2,-31.7,85.4,-15.8,83.9,-0.8C82.4,14.2,77.3,28.3,69.5,40.9C61.7,53.5,51.2,64.6,38.6,71.7C26,78.8,13,81.9,-1.2,84C-15.4,86.1,-30.8,87.2,-44.6,81.3C-58.4,75.4,-70.6,62.5,-78,48.2C-85.4,33.9,-88,17,-87,0.6C-86,-15.8,-81.4,-31.6,-72.6,-44.2C-63.8,-56.8,-50.8,-66.2,-37.2,-72.6C-23.6,-79,-9.4,-82.4,2.4,-86.6C14.2,-90.8,28.4,-78,42.2,-71.4Z" fill="#354e1f" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">Гаражи</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Функциональные и стильные гаражные боксы, которые идеально впишутся в архитектуру вашего участка.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- Беседки и хозблоки -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col">
-<div class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="300" viewbox="0 0 200 200" width="300" xmlns="http://www.w3.org/2000/svg">
-<path d="M37.5,-63.7C49.3,-58.5,60.1,-49.6,67.8,-38.3C75.5,-27.1,80.1,-13.5,80.2,0.1C80.3,13.6,75.9,27.2,68,38.2C60,49.2,48.5,57.6,36.2,63.9C23.9,70.2,10.9,74.4,-2.2,78.2C-15.3,82,-28.5,85.4,-41,81.2C-53.5,77,-65.3,65.2,-73.4,51.8C-81.5,38.4,-85.9,23.4,-87.3,8C-88.7,-7.4,-87.1,-23.3,-80.6,-36.8C-74.1,-50.3,-62.7,-61.4,-49.9,-66.2C-37.1,-71,-22.9,-69.5,-10.1,-68C2.7,-66.5,15.5,-65,37.5,-63.7Z" fill="#4C7B30" transform="translate(100 100)"></path>
-</svg>
-</div>
-<h3 class="text-2xl font-bold text-green-900 mb-4" style="">Беседки и хозблоки</h3>
-<p class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow" style="">Дополнительное пространство для отдыха и хранения. Эстетика и порядок в каждой детали.</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-</div>
-</div>
-</div>
-<!-- Новинки (Full width on small, 1 col on large) -->
-<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col lg:col-span-3">
-<div class="absolute inset-0 bg-primary/5 skew-bg transition-transform group-hover:scale-105 duration-700"></div>
-<div class="relative p-10 flex flex-col h-full z-10"><div class="absolute bottom-0 right-0 -mr-32 -mb-32 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700">
-<svg height="600" viewbox="0 0 200 200" width="600" xmlns="http://www.w3.org/2000/svg">
-<path d="M48.2,-81.4C63.4,-75.6,77.4,-64.8,85.5,-50.7C93.6,-36.6,95.8,-19.2,95.7,-1.8C95.6,15.6,93.2,33.1,85.2,48.2C77.2,63.3,63.6,76.1,48,84C32.4,91.9,14.8,94.9,-2.4,99.1C-19.6,103.3,-36.4,108.7,-51.7,103.8C-67,98.9,-80.8,83.7,-89.6,67.3C-98.4,50.9,-102.2,33.3,-101.9,15.8C-101.6,-1.7,-97.2,-19.1,-89.3,-34.7C-81.4,-50.3,-70,-64.1,-56,-70.5C-42,-76.9,-25.4,-75.9,-9.5,-77.9C6.4,-79.9,22.3,-84.9,48.2,-81.4Z" fill="#346219" transform="translate(100 100)"></path>
-</svg>
-</div>
-<div class="inline-block bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit" style="">Эксклюзив</div>
-<h3 class="text-3xl font-bold text-green-900 mb-4" style="">Новинки</h3>
-<p class="text-stone-500 text-base leading-relaxed mb-8 max-w-2xl" style="">Будьте первыми, кто оценит наши новейшие разработки 2024 года. Передовые материалы и концептуальный дизайн.</p>
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined" style="">arrow_forward</span>
-</div>
-<div class="h-[1px] bg-stone-200 flex-grow"></div>
-<button class="text-primary font-bold text-sm uppercase tracking-widest" style="">Подробнее</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section (Replaced About Section) -->
-<section class="relative py-40 overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="Темный лес" class="w-full h-full object-cover" data-alt="a dark, moody, cinematic high-resolution forest at twilight with deep greens and heavy shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrodw6GrnIO5CVW6hXQrKQwVKvF9gm-AWutJdwAZigyabIxdhHd5Fdb8eTmt1Vp2OGEGpWufIXPWtrEDybFwaauiExuhMCFrqEkAI8QoyfdImAvV6w5DLac9j-sZdwaIAQO04iND_I12xG2Fs8eEOgfWXFmFnep7Secdlp416Bso44MC_wKx6N2prqw3SQMwM3E7rkYuaeSw0xtekURoP6IbVfMXgbgTw-zKDo_86y2fmh3il53MP-oiycUwryQGFo65_l0JrsBG8" style=""/>
-<div class="absolute inset-0 bg-stone-950/60"></div>
-</div>
-<div class="relative z-10 max-w-2xl mx-auto px-8">
-<div class="bg-[#fcfbf9] p-8 md:p-12 rounded-none shadow-2xl">
-<h2 class="text-2xl font-bold text-[#1a1c1a] mb-8 font-headline" style="">Форма заказа</h2>
-<form class="space-y-4">
-<div>
-<input class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20" placeholder="Ваше Ф.И.О" type="text"/>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<input class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20" placeholder="Ваш телефон" type="tel"/>
-<input class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20" placeholder="Ваш E-mail" type="email"/>
-</div>
-<div>
-<textarea class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20 h-32" placeholder="Ваш комментарий"></textarea>
-</div>
-<div class="flex items-center justify-between py-2 border-b border-stone-100 group cursor-pointer">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-stone-600 text-lg">description</span>
-<span class="text-sm text-secondary/80">Скачать бланк заказа услуг <span class="text-[10px] text-stone-400">xlsx, 34kb</span></span>
-</div>
-<span class="material-symbols-outlined text-stone-400 text-lg">download</span>
-</div>
-<div class="flex items-center justify-between py-2 border-b border-stone-100 group cursor-pointer mb-8">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-stone-600 text-lg">description</span>
-<span class="text-sm text-secondary/80">Прикрепить бланк заказа услуг</span>
-</div>
-<span class="material-symbols-outlined text-stone-400 text-lg rotate-45">attach_file</span>
-</div>
-<button class="bg-[#8ccb8e] hover:bg-[#7db97f] text-white px-12 py-4 rounded-md font-bold text-sm transition-colors shadow-sm" type="submit">
-                        Отправить заявку
-                    </button>
-</form>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-stone-100 dark:bg-stone-950 w-full pt-24 pb-12">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-<div>
-<div class="text-lg font-black text-green-900 dark:text-stone-200 mb-6" style="">Verdant Shells</div>
-<p class="text-stone-500 dark:text-stone-400 font-manrope text-sm leading-relaxed max-w-xs mb-8" style="">
-                Культивируем экологичный образ жизни через продуманные архитектурные решения для современного сада.
-            </p>
-<div class="flex gap-6">
-<a class="text-stone-500 hover:text-orange-600 transition-all" href="#" style=""><span class="material-symbols-outlined" style="">public</span></a>
-<a class="text-stone-500 hover:text-orange-600 transition-all" href="#" style=""><span class="material-symbols-outlined" style="">psychiatry</span></a>
-<a class="text-stone-500 hover:text-orange-600 transition-all" href="#" style=""><span class="material-symbols-outlined" style="">nest_eco_leaf</span></a>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-8">
-<div>
-<h4 class="font-manrope text-xs uppercase tracking-widest text-green-900 dark:text-green-500 mb-6 font-bold" style="">Информация</h4>
-<ul class="space-y-4">
-<li class="" style=""><a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all" href="#" style="">Политика конфиденциальности</a></li>
-<li class="" style=""><a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all" href="#" style="">Отчет об устойчивом развитии</a></li>
-<li class="" style=""><a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all" href="#" style="">Доставка</a></li>
-<li class="" style=""><a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all" href="#" style="">Гарантия</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-manrope text-xs uppercase tracking-widest text-green-900 dark:text-green-500 mb-6 font-bold" style="">Связь</h4>
-<p class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest leading-relaxed" style="">
-                    Штаб-квартира: Стокгольм, Швеция<br/>
-                    hello@verdantshells.com<br/>
-                    +46 08 555 123
-                </p>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 mt-24 pt-8 border-t border-stone-200 dark:border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4">
-<div class="font-manrope text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400 opacity-80" style="">
-            © 2024 Verdant Shells. Культивируем экологичную жизнь.
+  </head>
+  <body class="bg-surface text-on-background">
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-xl shadow-stone-900/5 transition-all duration-300"
+    >
+      <div
+        class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20"
+      >
+        <a href="#hero"
+          ><div
+            class="text-2xl font-bold tracking-tighter text-green-900 dark:text-stone-100 font-headline"
+            style=""
+          >
+            Домики
+          </div></a
+        >
+        <div
+          class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-wide"
+        >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg"
+            href="#catalog"
+            style=""
+            >Каталог</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg"
+            href="#contact"
+            style=""
+            >Контакт</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg"
+            href="#"
+            style=""
+            >Сертификаты</a
+          >
+          <!-- <a -->
+          <!--   class="text-stone-600 dark:text-stone-400 hover:text-green-800 hover:bg-stone-100/50 dark:hover:bg-stone-800/50 transition-colors px-3 py-2 rounded-lg" -->
+          <!--   href="#" -->
+          <!--   style="" -->
+          <!--   >Запрос</a -->
+          <!-- > -->
         </div>
-<div class="flex gap-8">
-<a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600" href="#" style="">Instagram</a>
-<a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600" href="#" style="">LinkedIn</a>
-<a class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600" href="#" style="">Pinterest</a>
-</div>
-</div>
-</footer>
-</body></html>
+        <div class="flex items-center gap-4">
+          <!-- <button -->
+          <!--   class="material-symbols-outlined text-stone-600 hover:text-green-800" -->
+          <!--   style="" -->
+          <!-- > -->
+          <!--   search -->
+          <!-- </button> -->
+          <button
+            class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-semibold text-sm scale-95 hover:scale-100 duration-200 shadow-lg shadow-primary/20"
+            style=""
+          >
+            +7 .... .. ..
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative h-screen flex items-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Современный садовый дом"
+          class="w-full h-full object-cover"
+          data-alt="a modern minimalist wooden garden house with large glass windows nestled in a lush vibrant deciduous forest during the soft golden hour"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBci5tE8sJJGw72Bm-d5YK1EdRGo0ZPHbpnF4JEIjLXFT5r3yEhiylZe7P7W0WiJh7WfamHJKgqiLhruBBUgW9PlJoBLj09FALlDwYGNxmoXHEUqX7q06NOvumKKAkwec91jUQ5RXy4y7WXI6N_RQ1QsG-BO2OfQnEdxJmkVOpZwIRPm7972Uv3ewTK6vQgqXd107gBBKijP7Ae_i4SwQqlu7TDmPuXAIDwsDVGzW8pdIGnutS71tBLXTGhTY8WKtgx5XXYH2BXkrc"
+          style=""
+        />
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div class="max-w-2xl">
+          <h1
+            class="text-white text-6xl md:text-8xl font-black font-headline tracking-tighter leading-none mb-6"
+            style=""
+          >
+            Жизнь в гармонии <br />
+            с природой
+          </h1>
+          <p
+            class="text-stone-200 text-lg md:text-xl font-body leading-relaxed mb-10 max-w-lg"
+            style=""
+          >
+            Почувствуйте спокойствие осознанной жизни. Наши
+            углеродно-нейтральные садовые модули привносят современный дизайн в
+            сердце вашего убежища.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#catalog"
+              ><button
+                class="bg-secondary text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-on-secondary-fixed-variant transition-all shadow-2xl shadow-secondary/40"
+                style=""
+              >
+                Наш каталог
+              </button></a
+            >
+            <button
+              class="backdrop-blur-md bg-white/10 text-white border border-white/20 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all"
+              style=""
+            >
+              Контакт
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Category Grid Section (Replaces Features and Collection) -->
+    <section
+      id="catalog"
+      class="py-24 bg-surface-container-low overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="mb-16 text-center">
+          <h2
+            class="text-green-900 text-4xl md:text-5xl font-black font-headline mb-4"
+            style=""
+          >
+            Наши категории
+          </h2>
+          <div class="h-1 w-20 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 1-2 комнаты -->
+          <a href="./public/1-2rooms.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute top-0 right-0 -mr-16 -mt-16 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="300"
+                    viewbox="0 0 200 200"
+                    width="300"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M44.7,-76.4C58.1,-69.2,69.5,-57.4,77.3,-43.9C85.1,-30.4,89.2,-15.2,88.4,-0.5C87.5,14.3,81.8,28.5,73.6,41.4C65.4,54.3,54.7,65.8,41.7,73.5C28.7,81.2,14.3,85,-0.6,86.1C-15.6,87.1,-31.2,85.4,-45.1,78.5C-59,71.6,-71.2,59.5,-79.1,45.3C-87,31.1,-90.6,15.6,-89.7,0.5C-88.8,-14.5,-83.4,-29,-74.6,-41.7C-65.8,-54.4,-53.6,-65.3,-40.1,-72.5C-26.6,-79.7,-13.3,-83.1,0.7,-84.3C14.7,-85.5,29.4,-84.5,44.7,-76.4Z"
+                      fill="#4C7B30"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  1-2 комнаты
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Идеальное решение для компактного проживания или гостевого
+                  домика. Максимальный уют на минимальной площади.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- 3-4 комнаты -->
+          </a>
+          <a href="./public/3-4rooms.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute bottom-0 left-0 -ml-20 -mb-20 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="350"
+                    viewbox="0 0 200 200"
+                    width="350"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M39.9,-68.2C51.1,-60.7,59.2,-48.5,65.8,-35.6C72.4,-22.7,77.5,-9.1,77.2,4.5C76.9,18.1,71.2,31.7,62.8,43.4C54.4,55.1,43.3,64.9,30.5,70.8C17.7,76.7,3.1,78.8,-11.5,77.1C-26,75.4,-40.5,69.9,-52.3,60.6C-64.1,51.3,-73.2,38.2,-77.7,23.8C-82.2,9.3,-82.1,-6.6,-77.4,-21.2C-72.7,-35.8,-63.4,-49,-51.2,-56.3C-39,-63.6,-23.9,-65,-9.4,-67.6C5.1,-70.2,19.6,-74.1,39.9,-68.2Z"
+                      fill="#a93700"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  3-4 комнаты
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Просторные модули для всей семьи. Современная планировка и
+                  энергоэффективные технологии.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Для утепления -->
+          </a>
+          <a href="./public/isolatory.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="280"
+                    viewbox="0 0 200 200"
+                    width="280"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M47.5,-78.2C59.9,-71.4,67.1,-55,73.5,-39.7C79.8,-24.4,85.3,-10.2,84.9,3.9C84.4,17.9,78,31.9,69.1,44.1C60.2,56.3,48.8,66.7,35.5,73.1C22.2,79.5,7.1,81.9,-7.7,80.5C-22.5,79.1,-37,73.9,-49.6,65.6C-62.2,57.3,-72.9,45.8,-79,32.3C-85.1,18.8,-86.6,3.3,-84.3,-11.5C-82,-26.3,-75.9,-40.4,-65.8,-51.1C-55.7,-61.8,-41.6,-69.1,-27.9,-75C-14.2,-80.9,0.8,-85.4,16.5,-84C32.2,-82.6,47.5,-78.2,47.5,-78.2Z"
+                      fill="#346219"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  Для утепления
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Специальные решения для круглогодичного проживания даже в
+                  самых суровых климатических условиях.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Бани -->
+          </a>
+          <a href="./public/saunas.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute top-0 left-0 -ml-12 -mt-12 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="320"
+                    viewbox="0 0 200 200"
+                    width="320"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M51.3,-84C64.9,-78.6,73.3,-62.4,79.4,-46.1C85.5,-29.8,89.3,-13.4,88.7,2.8C88.1,19,83,35.1,74.5,49.1C66,63.1,54.1,75,40.1,82.4C26.1,89.8,12,92.7,-2.8,97.5C-17.6,102.3,-33.1,109.1,-46.9,104.2C-60.7,99.3,-72.8,82.7,-81,66.1C-89.2,49.5,-93.5,32.9,-94.1,16.3C-94.7,-0.3,-91.6,-16.9,-84.9,-31.8C-78.2,-46.7,-67.9,-59.9,-55.1,-65.9C-42.3,-71.9,-27,-70.7,-12.3,-72.8C2.4,-74.9,17.1,-80.3,31.7,-83C46.3,-85.7,60.8,-85.7,51.3,-84Z"
+                      fill="#445e2e"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  Бани
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Традиционный отдых в современном исполнении.
+                  Высококачественная древесина и инновационная изоляция.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Гаражи -->
+          </a>
+          <a href="./public/garages.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute bottom-1/4 right-0 translate-x-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="260"
+                    viewbox="0 0 200 200"
+                    width="260"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M42.2,-71.4C55.7,-64.8,68.4,-56.1,75.8,-43.9C83.2,-31.7,85.4,-15.8,83.9,-0.8C82.4,14.2,77.3,28.3,69.5,40.9C61.7,53.5,51.2,64.6,38.6,71.7C26,78.8,13,81.9,-1.2,84C-15.4,86.1,-30.8,87.2,-44.6,81.3C-58.4,75.4,-70.6,62.5,-78,48.2C-85.4,33.9,-88,17,-87,0.6C-86,-15.8,-81.4,-31.6,-72.6,-44.2C-63.8,-56.8,-50.8,-66.2,-37.2,-72.6C-23.6,-79,-9.4,-82.4,2.4,-86.6C14.2,-90.8,28.4,-78,42.2,-71.4Z"
+                      fill="#354e1f"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  Гаражи
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Функциональные и стильные гаражные боксы, которые идеально
+                  впишутся в архитектуру вашего участка.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Беседки и хозблоки -->
+          </a>
+          <a href="./public/gazebos.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col"
+            >
+              <div
+                class="absolute inset-0 bg-slate-50 skew-bg-reverse transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="300"
+                    viewbox="0 0 200 200"
+                    width="300"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M37.5,-63.7C49.3,-58.5,60.1,-49.6,67.8,-38.3C75.5,-27.1,80.1,-13.5,80.2,0.1C80.3,13.6,75.9,27.2,68,38.2C60,49.2,48.5,57.6,36.2,63.9C23.9,70.2,10.9,74.4,-2.2,78.2C-15.3,82,-28.5,85.4,-41,81.2C-53.5,77,-65.3,65.2,-73.4,51.8C-81.5,38.4,-85.9,23.4,-87.3,8C-88.7,-7.4,-87.1,-23.3,-80.6,-36.8C-74.1,-50.3,-62.7,-61.4,-49.9,-66.2C-37.1,-71,-22.9,-69.5,-10.1,-68C2.7,-66.5,15.5,-65,37.5,-63.7Z"
+                      fill="#4C7B30"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-900 mb-4" style="">
+                  Беседки и хозблоки
+                </h3>
+                <p
+                  class="text-stone-500 text-sm leading-relaxed mb-8 flex-grow"
+                  style=""
+                >
+                  Дополнительное пространство для отдыха и хранения. Эстетика и
+                  порядок в каждой детали.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Новинки (Full width on small, 1 col on large) -->
+          </a>
+          <a href="./public/new.pdf" target="_blank">
+            <div
+              class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[400px] flex flex-col lg:col-span-3"
+            >
+              <div
+                class="absolute inset-0 bg-primary/5 skew-bg transition-transform group-hover:scale-105 duration-700"
+              ></div>
+              <div class="relative p-10 flex flex-col h-full z-10">
+                <div
+                  class="absolute bottom-0 right-0 -mr-32 -mb-32 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-700"
+                >
+                  <svg
+                    height="600"
+                    viewbox="0 0 200 200"
+                    width="600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M48.2,-81.4C63.4,-75.6,77.4,-64.8,85.5,-50.7C93.6,-36.6,95.8,-19.2,95.7,-1.8C95.6,15.6,93.2,33.1,85.2,48.2C77.2,63.3,63.6,76.1,48,84C32.4,91.9,14.8,94.9,-2.4,99.1C-19.6,103.3,-36.4,108.7,-51.7,103.8C-67,98.9,-80.8,83.7,-89.6,67.3C-98.4,50.9,-102.2,33.3,-101.9,15.8C-101.6,-1.7,-97.2,-19.1,-89.3,-34.7C-81.4,-50.3,-70,-64.1,-56,-70.5C-42,-76.9,-25.4,-75.9,-9.5,-77.9C6.4,-79.9,22.3,-84.9,48.2,-81.4Z"
+                      fill="#346219"
+                      transform="translate(100 100)"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="inline-block bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4 w-fit"
+                  style=""
+                >
+                  Эксклюзив
+                </div>
+                <h3 class="text-3xl font-bold text-green-900 mb-4" style="">
+                  Новинки
+                </h3>
+                <p
+                  class="text-stone-500 text-base leading-relaxed mb-8 max-w-2xl"
+                  style=""
+                >
+                  Будьте первыми, кто оценит наши новейшие разработки 2024 года.
+                  Передовые материалы и концептуальный дизайн.
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <span class="material-symbols-outlined" style=""
+                      >arrow_forward</span
+                    >
+                  </div>
+                  <div class="h-[1px] bg-stone-200 flex-grow"></div>
+                  <button
+                    class="text-primary font-bold text-sm uppercase tracking-widest"
+                    style=""
+                  >
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section (Replaced About Section) -->
+    <section id="contact" class="relative py-40 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Темный лес"
+          class="w-full h-full object-cover"
+          data-alt="a dark, moody, cinematic high-resolution forest at twilight with deep greens and heavy shadows"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrodw6GrnIO5CVW6hXQrKQwVKvF9gm-AWutJdwAZigyabIxdhHd5Fdb8eTmt1Vp2OGEGpWufIXPWtrEDybFwaauiExuhMCFrqEkAI8QoyfdImAvV6w5DLac9j-sZdwaIAQO04iND_I12xG2Fs8eEOgfWXFmFnep7Secdlp416Bso44MC_wKx6N2prqw3SQMwM3E7rkYuaeSw0xtekURoP6IbVfMXgbgTw-zKDo_86y2fmh3il53MP-oiycUwryQGFo65_l0JrsBG8"
+          style=""
+        />
+        <div class="absolute inset-0 bg-stone-950/60"></div>
+      </div>
+      <div class="relative z-10 max-w-2xl mx-auto px-8">
+        <div class="bg-[#fcfbf9] p-8 md:p-12 rounded-none shadow-2xl">
+          <h2
+            class="text-2xl font-bold text-[#1a1c1a] mb-8 font-headline"
+            style=""
+          >
+            Форма контакта
+          </h2>
+          <form class="space-y-4">
+            <div>
+              <input
+                class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20"
+                placeholder="Ваше Ф.И.О"
+                type="text"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20"
+                placeholder="Ваш телефон"
+                type="tel"
+              />
+              <input
+                class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20"
+                placeholder="Ваш E-mail"
+                type="email"
+              />
+            </div>
+            <div>
+              <textarea
+                class="w-full bg-[#f9f8f6] border-none text-sm p-4 placeholder-stone-400 focus:ring-1 focus:ring-primary/20 h-32"
+                placeholder="Ваш комментарий"
+              ></textarea>
+            </div>
+            <!-- <div -->
+            <!--   class="flex items-center justify-between py-2 border-b border-stone-100 group cursor-pointer" -->
+            <!-- > -->
+            <!--   <div class="flex items-center gap-3"> -->
+            <!--     <span class="material-symbols-outlined text-stone-600 text-lg" -->
+            <!--       >description</span -->
+            <!--     > -->
+            <!--     <span class="text-sm text-secondary/80" -->
+            <!--       >Скачать бланк заказа услуг -->
+            <!--       <span class="text-[10px] text-stone-400" -->
+            <!--         >xlsx, 34kb</span -->
+            <!--       ></span -->
+            <!--     > -->
+            <!--   </div> -->
+            <!--   <span class="material-symbols-outlined text-stone-400 text-lg" -->
+            <!--     >download</span -->
+            <!--   > -->
+            <!-- </div> -->
+            <!-- <div -->
+            <!--   class="flex items-center justify-between py-2 border-b border-stone-100 group cursor-pointer mb-8" -->
+            <!-- > -->
+            <!--   <div class="flex items-center gap-3"> -->
+            <!--     <span class="material-symbols-outlined text-stone-600 text-lg" -->
+            <!--       >description</span -->
+            <!--     > -->
+            <!--     <span class="text-sm text-secondary/80" -->
+            <!--       >Прикрепить бланк заказа услуг</span -->
+            <!--     > -->
+            <!--   </div> -->
+            <!--   <span -->
+            <!--     class="material-symbols-outlined text-stone-400 text-lg rotate-45" -->
+            <!--     >attach_file</span -->
+            <!--   > -->
+            <!-- </div> -->
+            <button
+              class="bg-[#8ccb8e] hover:bg-[#7db97f] text-white px-12 py-4 rounded-md font-bold text-sm transition-colors shadow-sm"
+              type="submit"
+            >
+              Отправить заявку
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-stone-100 dark:bg-stone-950 w-full pt-24 pb-12">
+      <div
+        class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div>
+          <div
+            class="text-lg font-black text-green-900 dark:text-stone-200 mb-6"
+            style=""
+          >
+            Домики
+          </div>
+          <p
+            class="text-stone-500 dark:text-stone-400 font-manrope text-sm leading-relaxed max-w-xs mb-8"
+            style=""
+          >
+            Культивируем экологичный образ жизни через продуманные архитектурные
+            решения для современного сада.
+          </p>
+          <div class="flex gap-6">
+            <a
+              class="text-stone-500 hover:text-orange-600 transition-all"
+              href="#"
+              style=""
+              ><span class="material-symbols-outlined" style="">public</span></a
+            >
+            <a
+              class="text-stone-500 hover:text-orange-600 transition-all"
+              href="#"
+              style=""
+              ><span class="material-symbols-outlined" style=""
+                >psychiatry</span
+              ></a
+            >
+            <a
+              class="text-stone-500 hover:text-orange-600 transition-all"
+              href="#"
+              style=""
+              ><span class="material-symbols-outlined" style=""
+                >nest_eco_leaf</span
+              ></a
+            >
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h4
+              class="font-manrope text-xs uppercase tracking-widest text-green-900 dark:text-green-500 mb-6 font-bold"
+              style=""
+            >
+              Информация
+            </h4>
+            <ul class="space-y-4">
+              <li class="" style="">
+                <a
+                  class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all"
+                  href="#"
+                  style=""
+                  >Политика конфиденциальности</a
+                >
+              </li>
+              <li class="" style="">
+                <a
+                  class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all"
+                  href="#"
+                  style=""
+                  >Отчет об устойчивом развитии</a
+                >
+              </li>
+              <li class="" style="">
+                <a
+                  class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all"
+                  href="#"
+                  style=""
+                  >Доставка</a
+                >
+              </li>
+              <li class="" style="">
+                <a
+                  class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600 transition-all"
+                  href="#"
+                  style=""
+                  >Гарантия</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-manrope text-xs uppercase tracking-widest text-green-900 dark:text-green-500 mb-6 font-bold"
+              style=""
+            >
+              Связь
+            </h4>
+            <p
+              class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest leading-relaxed"
+              style=""
+            >
+              Штаб: ### <br />
+              hello@domiki.ru<br />
+              +46 08 555 123
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-8 mt-24 pt-8 border-t border-stone-200 dark:border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <div
+          class="font-manrope text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400 opacity-80"
+          style=""
+        >
+          © 2024 Домики . Культивируем экологичную жизнь.
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600"
+            href="#"
+            style=""
+            >Instagram</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600"
+            href="#"
+            style=""
+            >LinkedIn</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-400 font-manrope text-xs uppercase tracking-widest hover:text-orange-600"
+            href="#"
+            style=""
+            >Pinterest</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
